@@ -19,19 +19,19 @@ public class exo5 {
  * 
 */
         // declaration de variables
-        float a;
-        float b;
-        float c;
+        int a;
+        int b;
+        int c;
         Scanner entree = new Scanner(System.in);
-        float equation;
+        int equation;
 
         // saisie des valeurs
         System.out.println("Sélectionner la valeur de A :");
-        a = entree.nextFloat();
+        a = entree.nextInt();
         System.out.println("Sélectionner la valeur de B :");
-        b = entree.nextFloat();
+        b = entree.nextInt();
         System.out.println("Sélectionner la valeur de C :");
-        c = entree.nextFloat();
+        c = entree.nextInt();
 
         //calcul
         equation=a*b/c;

@@ -20,15 +20,18 @@ import java.util.Scanner;
 
 public class exo6 {
     public static void main(String[] args) {
+        // déclaration de variables
         int age;
         String prenom;
         Scanner entree = new Scanner(System.in);
 
+        // attribution des valeurs
         System.out.print("Entrez votre prenom :");
         prenom = entree.nextLine();
         System.out.print("Entrez votre age :");
         age = entree.nextInt();
 
+        // resultat
         System.out.print("Je m'appelle "+prenom+", j'ai "+age+" ans.");
 
         entree.close();

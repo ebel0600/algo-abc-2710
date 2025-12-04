@@ -42,6 +42,9 @@ public class exo8 {
         String securedpassword;
         Scanner entree = new Scanner(System.in);
         boolean compare;
+        String ident;
+        String mdp;
+        boolean compare2;
 
         //entree des variables
         System.out.print("Entrez votre prenom :");
@@ -55,7 +58,7 @@ public class exo8 {
 
         Tentative de vérification format email échouée
 
-        if(email .equals(String.format(" %s %s ","@","."))){
+        if(email.equals(String.format(" %s %s ","@","."))){
             System.out.print("réussite");
         }
         else{
@@ -71,11 +74,28 @@ public class exo8 {
 
         compare = securedpassword.equals(password);
 
+        // décision d'inscription
         if(compare==true){
             System.out.print("Merci "+prenom+" "+nom+", votre inscription a bien été effectuée. Vous recevrez un mail de notification à l'adresse : "+email+".");
         }
         else{
             System.out.print("Inscription annulée.");
+        }
+
+        //processus de connexion
+        System.out.print("Pour vous connecter, veuillez renseigner l'email : ");
+        ident = entree.nextLine();
+        System.out.print("le mot de passe :");
+        mdp = entree.nextLine();
+
+        compare = ident.equals(email);
+        compare2 = mdp.equals(password);
+
+        if(compare == true && compare2 == true){
+             System.out.print("Connexion autorisée.");
+        }
+        else{
+             System.out.print("Connexion refusée.");
         }
 
         entree.close();

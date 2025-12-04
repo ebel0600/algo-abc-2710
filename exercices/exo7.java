@@ -25,9 +25,12 @@ public class exo7 {
         Scanner entree = new Scanner(System.in);
         char reponse;
         
+        //question et attribution de la reponse
         System.out.print("Do you speak english ? (y/n)");
         reponse = entree.next().charAt(0);
         
+
+        //traitement de la reponse
         if(reponse == 'y'){
             System.out.print("Nice to meet you !");
         }

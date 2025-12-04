@@ -51,12 +51,18 @@ public class exo8 {
         System.out.print("Entrez votre email :");
         email = entree.nextLine();
 
-        /* if(email .equals(String.format(" %s %s ","@","."))){
+        /* 
+
+        Tentative de vérification format email échouée
+
+        if(email .equals(String.format(" %s %s ","@","."))){
             System.out.print("réussite");
         }
         else{
-            System.out.print("fail");
-        } */
+            System.out.print("fail");       
+        }
+        
+        */
         
         System.out.print("Entrez votre mot de passe :");
         password = entree.nextLine();

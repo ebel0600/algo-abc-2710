@@ -38,6 +38,7 @@ import java.lang.classfile.instruction.SwitchCase;
 
 import java.util.Scanner;
 
+@SuppressWarnings("unused")
 public class exo15 {
     public static void main(String[] args) {
 
@@ -58,7 +59,6 @@ public class exo15 {
         Scanner entree = new Scanner(System.in);
 
         //entree des devises
-        
         System.out.println("Quel est votre monnaie ?");
         base = entree.nextLine();
         //verification de conformite
@@ -69,7 +69,6 @@ public class exo15 {
 
         System.out.println("Quel est votre montant ?");
         valeur = entree.nextFloat();
-
 
         //une ligne qui debug l'entree suivante
         entree.nextLine();
@@ -89,6 +88,8 @@ public class exo15 {
                 convertTo = entree.nextLine();
             }
         }
+
+
         // calcul du resultat
         switch (base) {
 
@@ -127,7 +128,8 @@ public class exo15 {
                 break;
 
             }
-        
+            
+            //conversion a deux decimaux
             resultat*=100;
             resultatConv=(int) resultat;
             resultat = resultatConv;

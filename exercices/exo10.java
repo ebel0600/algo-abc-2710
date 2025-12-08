@@ -73,6 +73,7 @@ public class exo10 {
             score++;
         }
 
+        //envoi du resultat
         System.out.print("Résultat du QUIZZ : vous avez un score de "+score+" points(s) /5.");
 
         entree.close();

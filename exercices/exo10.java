@@ -37,14 +37,45 @@ import java.util.Scanner;
 
 public class exo10 {
     public static void main(String[] args) {
-        int score;
+        //declaration de variables
         char reponse;
-        boolean reponseJuste;
+        int score=0;
         Scanner entree = new Scanner(System.in);
-        
+
+        //Pour le moment, on ne fait que repeter le meme processus pour chaque question manuellement, sans traiter les entrees != V et F
         System.out.println("Question 1 : L'informatique a besoin des mathématiques ? (V/F)");
         reponse = entree.next().charAt(0);
+        if(reponse=='V'){
+            score++;
+        }
 
+        System.out.println("Question 2 : L'Algèbre de Boole a été inventé par Steve Jobs ? (V/F)");
+        reponse = entree.next().charAt(0);
+        if(reponse=='F'){
+            score++;
+        }
+
+        System.out.println("Question 3 : En numération, la base de 10 va de 0 à 10 ? (V/F)");
+        reponse = entree.next().charAt(0);
+        if(reponse=='F'){
+            score++;
+        }
+
+        System.out.println("Question 4 : Une table de vérité retourne l'expression algébrique (V/F)");
+        reponse = entree.next().charAt(0);
+        if(reponse=='V'){
+            score++;
+        }
+
+        System.out.println("Question 5 : Git permet de stocker à distance son travail (V/F)");
+        reponse = entree.next().charAt(0);
+        if(reponse=='V'){
+            score++;
+        }
+
+        System.out.print("Résultat du QUIZZ : vous avez un score de "+score+" points(s) /5.");
+
+        entree.close();
     }
     
 }

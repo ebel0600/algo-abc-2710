@@ -66,7 +66,7 @@ public class exo20{
 
         //calcul pourcentages
         coefJI = ((double)votantsJI/((double)votantsJI+(double)votantsVE))*100;
-        /*conv = (int) coefJI;
+        conv = (int) coefJI*100;
         coefJI = conv;
         coefJI/=100;
         coefVE = 100 - coefJI;
@@ -79,7 +79,7 @@ public class exo20{
         }
         else{
             System.out.print("Vincent Escreau est le nouveau maire de Mulhouse avec "+ coefVE + "% des votes.");
-        }*/
+        }
 
         entree.close();
     }

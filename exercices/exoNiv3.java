@@ -70,12 +70,14 @@ Vous pouvez retirer qu'en multiple de 10
 
 public class exoNiv3 {
     public static void main(String[] args) {
+
+        // declaration de variables
         int choix;
         int solde = 2000;
         int montant;
         Scanner entree = new Scanner(System.in);
 
-
+        //simulation d'ATM
         System.out.println("Bienvenue sur votre compte bancaire, que puis-je faire pour vous ?");
         do{
             System.out.println("(0)Quitter\n" + "(1)Retirer de l'argent\n" + "(2)Consulter votre solde\n" + "(3)Déposer de l'argent");

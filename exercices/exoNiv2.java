@@ -1,5 +1,8 @@
 package exercices;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 /* Niveau 2 : A l'aide d'une boucle, PRINT & SCANNER 
@@ -54,13 +57,13 @@ Les afficher à la fin avec le coût total de vos courses et demander si vous vo
 
          //declaration de variables
          int i = 0;
-         String achat="vous voulez acheter :\n";
+         String achat="";
          double prix;
          double total=0;
          int eur;
          boolean encore;
          Scanner entree = new Scanner(System.in);
-
+         int retrait;
 
          //processus d'achats
          do{
@@ -70,7 +73,7 @@ Les afficher à la fin avec le coût total de vos courses et demander si vous vo
             else{
                System.out.println("Que voulez vous acheter ?");
             }
-            achat += entree.nextLine()+" : ";
+            achat +=entree.nextLine()+": ";
 
             System.out.println("A quel prix ?");
             prix = entree.nextDouble();
@@ -78,7 +81,7 @@ Les afficher à la fin avec le coût total de vos courses et demander si vous vo
             total +=prix;
             achat += prix+" euros\n";
 
-            System.out.println("Souhaitez vous continuer ?");
+            System.out.println("Souhaitez vous continuer (true/false)?");
             encore = entree.nextBoolean();
             entree.nextLine();
             i++;
@@ -90,9 +93,39 @@ Les afficher à la fin avec le coût total de vos courses et demander si vous vo
             total = eur;
             total /=100;
 
-
             //affichage de resultat
-            System.out.print("Pour récapituler, "+achat+"\nTotal : "+total+" euros. \nSouhaitez vous retirer un article ?");
+            System.out.println("Pour récapituler, vous achetez \n"+achat+"\nTotal : "+total+" euros. \nSouhaitez vous retirer un article (true/false)?");
+            encore = entree.nextBoolean();
+            entree.nextLine();
+            List<String> listeAchat = new ArrayList<String>(Arrays.asList(achat.split("\n")));
+
+            //procedure de retrait d'articles dans un tableau de caractères delimite par un saut a la ligne
+               while(encore){
+               System.out.println("Choisissez l'article à retirer :");
+               retrait = entree.nextInt();
+               
+
+               while(retrait > i){
+                  System.out.println("Saisie incorrecte, veuillez entrer une ligne de la liste (de 1 à "+i+").");
+                  retrait = entree.nextInt();
+               }
+
+               for(int j=retrait; j<i;j++){
+                  listeAchat.set(j-1,achat.split("\n")[j]);
+               }
+               listeAchat.remove(i-1);
+               
+              i--;
+
+              System.out.println("Il vous reste "+i+" articles. Souhaitez vous en retirer un autre ?");
+              encore = entree.nextBoolean();
+            }
+
+            System.out.println("Voici ce que vous avez acheté :");
+            for (int j=0; j<i;j++){
+               System.out.println(listeAchat.get(j));
+            } 
+            System.out.println("Nous vous en remercions, à bientôt !");
 
          entree.close();
       }

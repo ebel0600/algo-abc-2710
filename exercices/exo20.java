@@ -75,7 +75,7 @@ public class exo20{
             System.out.print("Passage au second tour !");
         }
         else if(coefJI>coefVE){
-            System.out.print("Joselyne Utile est la nouvelle maire de Mulhouse avec " + coefJI+ "% des votes.");
+            System.out.print("Joselyne Utile est la nouvelle maire de Mulhouse avec " + coefJI + "% des votes.");
         }
         else{
             System.out.print("Vincent Escreau est le nouveau maire de Mulhouse avec "+ coefVE + "% des votes.");

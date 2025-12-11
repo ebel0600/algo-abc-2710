@@ -27,8 +27,9 @@ public class exo27 {
         System.out.println("Vous achetez pour un total de "+total+" euros. Quelle somme souhaitez vous avancer ?");
         paiement = entree.nextInt();
 
+        //rendu de la monnaie
         while(paiement<total){
-            System.out.println("Somme insuffisante, veuillez l'éditer pour payer vos achats");
+            System.out.println("Somme insuffisante, veuillez l'éditer pour payer vos achats"); //on exclut les paiement inférieurs au total
             paiement = entree.nextInt();
         }
 
@@ -37,6 +38,7 @@ public class exo27 {
             billet5 = (paiement-total)%10/5; 
             euros = (paiement-total)%5; 
 
+            //affichage du resultat
             System.out.println("Nous vous rendons :");
             while(billets10 > 0){
                 System.out.println("Billet de 10");

@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class Exo2_1 {
     public static void main(String[] args) {
         Scanner entree = new Scanner(System.in);
+
+        System.out.println("Entrez votre âge :");
         int a;
         a = entree.nextInt();
         if(a<0){

@@ -5,21 +5,21 @@ import java.lang.Math;
 
 public class exo1_2 {
     public static void main(String[] args) {
-        double R;
+        double r;
         double aire;
         double volume;
         Scanner entree = new Scanner(System.in);
 
-        System.out.println("Entrez le rayon de la sphère en cm");
-        R = entree.nextDouble();
-        while(R < 0){
+        System.out.println("Entrez le rayon de la sphère en km");
+        r = entree.nextDouble();
+        while(r < 0){
             System.out.println("Saisie incorrecte, veuillez sélectionner un nombre positif");
-            R = entree.nextDouble();
+            r = entree.nextDouble();
         }
-        aire = 4*Math.PI*Math.pow(R, 2);
-        volume = ((4/3)*Math.PI)*Math.pow(R, 3);
+        aire = 4*Math.PI*Math.pow(r, 2);
+        volume = (4.0/3.0)*Math.PI*Math.pow(r, 3);
 
-        System.out.printf("Aire = %.2f cm²; Volume = %.2f cm^3",aire,volume);
+        System.out.printf("Aire = %e km²; Volume = %e km^3",aire,volume);
 
         entree.close();
 

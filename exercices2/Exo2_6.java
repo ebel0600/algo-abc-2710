@@ -7,7 +7,7 @@ public class Exo2_6 {
         
         //declaration de variables
         int nombre;
-        int diviseurs = 0;
+        int diviseurs = 2;
         Scanner entree = new Scanner(System.in);
         
         //entree de variables
@@ -15,16 +15,17 @@ public class Exo2_6 {
         nombre = entree.nextInt();
 
         //recherche de diviseurs
-        for(int i = 1; i<=nombre;i++){
+        for(int i = 2; i<=nombre/2;i++){
             if(nombre%i==0){
                 diviseurs++;
+                System.out.println(i);
             }
         }
 
-        diviseurs-=2; // on exclut 1 et le nombre même
+        //diviseurs-=2; // on exclut 1 et le nombre même
 
-        if(diviseurs>0){
-            System.out.println("Ce nombre n'est pas premier : il a "+diviseurs+" diviseurs en dehors de 1 et lui même.");
+        if(diviseurs>2){
+            System.out.println("Ce nombre n'est pas premier : il a "+(diviseurs-2)+" diviseurs en dehors de 1 et lui même.");
         }
         else{
             System.out.println("C'est un nombre premier.");

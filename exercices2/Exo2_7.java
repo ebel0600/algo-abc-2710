@@ -10,7 +10,8 @@ public class Exo2_7 {
         Scanner entree = new Scanner(System.in);
         double resultat;
         double conversion;
-        double test = 0;
+        @SuppressWarnings("unused")
+        double test;
 
         // affectation de la variable de distance
         forbreak: do {
@@ -67,11 +68,10 @@ public class Exo2_7 {
             } else {
                 System.out.println("Valeur en dehors de la plage autorisée");
             }
-        } while (!chaineresult.equals("q"));
+        } while (true);
 
         System.out.println("Programme terminé");
         entree.close();
-
     }
 }
 // corrigé

@@ -58,7 +58,7 @@ public class Exo1_1 {
             // voulez vous continuer ?
             System.out.println("Souhaitez vous continuer ? (O/N)");
 
-            continUe: while (true) {
+            continUe : while (true) {
                 try {
                     saisie = entree.next().charAt(0);
                     if (!(saisie == 'o' || saisie == 'O' || saisie == 'n' || saisie == 'N')) {

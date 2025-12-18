@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Exo2_7 {
     public static void main(String[] args) {
         // déclaration de variables
+        
         String chaineresult;
         Scanner entree = new Scanner(System.in);
         double resultat;
@@ -40,7 +41,7 @@ public class Exo2_7 {
                         conversion = Math.round(resultat);
                         resultat = conversion;
                         resultat /= 100;
-                        System.out.println("La conversion en miles est de " + resultat);
+                        System.out.println("La conversion de "+tabchaine[0]+"km en miles est de " + resultat);
                         break;
                     // avec une unite de mesure
                     case 2:
@@ -50,7 +51,7 @@ public class Exo2_7 {
                             conversion = Math.round(resultat);
                             resultat = conversion;
                             resultat /= 100;
-                            System.out.println("La conversion en kilometres est de :" + resultat);
+                            System.out.println("La conversion de "+ tabchaine[0] +"mi en kilometres est de :" + resultat);
                             break;
                         } else if (tabchaine.length > 1 && (tabchaine[1].toUpperCase()).equals("K")) {
                             resultat = Double.parseDouble(tabchaine[0]) / 1.609;
@@ -58,7 +59,7 @@ public class Exo2_7 {
                             conversion = Math.round(resultat);
                             resultat = conversion;
                             resultat /= 100;
-                            System.out.println("La conversion en miles est de " + resultat);
+                            System.out.println("La conversion de "+tabchaine[0]+"km en miles est de " + resultat);
                             break;
                         }
                     default:

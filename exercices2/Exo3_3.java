@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Exo3_3 {
     public static void main(String[] args) {
+        //declaration de variables
         int nombre;
         int[] tableau;
         int taille;

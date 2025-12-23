@@ -20,7 +20,7 @@ public class Exo3_4 {
         System.out.println("Définissez votre chaine de caracteres :");
         // controle du point en dernier caractère
         do {
-            phrase = entree.nextLine();
+            phrase = entree.nextLine().toLowerCase();
             dernier = phrase.substring(phrase.length() - 1);
             if (!dernier.equals(".")) {
                 System.out.println("La phrase doit se terminer par un point, veuillez recommencer.");

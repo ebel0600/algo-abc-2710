@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exo3_4 {
     public static void main(String[] args) {
         // declaration des variables
-        int compteLettres = 0;
+        boolean compteLettres = false;
         Scanner entree = new Scanner(System.in);
         String phrase;
         String dernier;
@@ -33,12 +33,13 @@ public class Exo3_4 {
         lettres = phrase.toCharArray();
         for (int i = 0; i < lettres.length; i++) {
             if (lettres[i] != '.') {
-                compteLettres++;
+                compteLettres = true;
+                break;
             }
         }
 
         // si la chaine n'est pas vide
-        if (compteLettres > 0) {
+        if (compteLettres) {
             for (int k = 0; k < lettres.length; k++) {
                 if (lettres[k] == lettre) {
                     positions += (k + 1) + ", ";

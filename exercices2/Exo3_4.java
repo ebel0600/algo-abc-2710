@@ -1,6 +1,5 @@
 package exercices2;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Exo3_4 {
@@ -8,46 +7,64 @@ public class Exo3_4 {
         // declaration des variables
         int compteLettres = 0;
         Scanner entree = new Scanner(System.in);
-        char[] mot;
-        int position;
-        int taille;
+        String phrase;
+        String dernier;
         char lettre;
+        String positions = "";
+        String resultat;
+        char[] lettres;
+        int occurences = 0;
 
         // parametrage du tableau
-        System.out.println("Définissez la taille de la chaine de caractères :");
-        taille = entree.nextInt();
-        mot = new char[taille];
+
         System.out.println("Définissez votre chaine de caracteres :");
-        for (int i = 0; i < taille; i++) {
-            mot[i] = entree.next().charAt(0);
-        }
+        // controle du point en dernier caractère
+        do {
+            phrase = entree.nextLine();
+            dernier = phrase.substring(phrase.length() - 1);
+            if (!dernier.equals(".")) {
+                System.out.println("La phrase doit se terminer par un point, veuillez recommencer.");
+            }
+        } while (!dernier.equals("."));
 
         // recherche de caracteres dans le mot
         System.out.println("Entrez le caractère à rechercher :");
-        lettre = entree.next().charAt(0);
-
-        for (int j = 0; j < taille; j++) {
-            if (mot[j] != '.') {
+        lettre = entree.nextLine().charAt(0);
+        lettres = phrase.toCharArray();
+        for (int i = 0; i < lettres.length; i++) {
+            if (lettres[i] != '.') {
                 compteLettres++;
             }
         }
 
+        // si la chaine n'est pas vide
         if (compteLettres > 0) {
-            position = Arrays.binarySearch(mot, lettre);
-            if (position >= 0) {
-                for (int k = 0; k < taille; k++) {
-                    if (mot[k] == lettre) {
-                        System.out.println("La lettree recherchée est en position " + (k + 1));
-                    }
+            for (int k = 0; k < lettres.length; k++) {
+                if (lettres[k] == lettre) {
+                    positions += (k + 1) + ", ";
+                    occurences++;
                 }
+            }
+            // calcul du resultat
+            if (positions.length() > 0) {
+                resultat = positions.substring(0, positions.length() - 2);
             } else {
-                System.out.println("La lettre recherchée n'est pas dans le mot");
+                resultat = positions;
             }
 
+            // affichage du resultat
+            if (resultat.length() > 0) {
+                System.out.println(
+                        "La lettre recherchée est trouvée " + occurences + " fois en position : " + resultat + ".");
+
+            } else {
+                System.out.println("La lettre recherchée n'est pas dans la chaine.");
+            }
         } else {
             System.out.println("La chaine est vide !");
         }
         System.out.println("Programme terminé");
         entree.close();
+
     }
 }

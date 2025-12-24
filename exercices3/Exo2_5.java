@@ -14,7 +14,7 @@ public class Exo2_5 {
         int scoreIA = 0;
 
         // Deroule du jeu
-        
+
         jeu: do {
             System.out.println("Entrez la valeur de la main que vous souhaitez jouer :");
             numberPlayer = entree.nextInt();
@@ -29,43 +29,35 @@ public class Exo2_5 {
                 break jeu;
             }
 
-            if (numberPlayer > numberIa) {
-                switch (numberPlayer - numberIa) {
-                    case 1:
+            switch (Math.abs(numberIa - numberPlayer)) {
+                case 0:
+                    System.out.println("J'ai lancé un " + numberIa + "\nEgalité ! pas d'évolution de scores");
+                    break;
+                case 1:
+                    if (numberIa < numberPlayer) {
                         scoreIA++;
-
-                        System.out.println("J'ai lancé un " + numberIa + "\nJe gagne la manche : vous " + scorePlayer + " - moi " + scoreIA);
-                        break;
-                    case 2:
+                    } else
                         scorePlayer++;
-                        System.out.println("J'ai lancé un " + numberIa + "\nVous gagnez la manche : vous " + scorePlayer + " - moi " + scoreIA);
-                        break;
-                    default:
-                        System.out.println(("Situation inconnue"));
-                }
-            } else if (numberIa > numberPlayer) {
-                switch (numberIa - numberPlayer) {
-                    case 1:
-                        scorePlayer++;
-                        System.out.println("J'ai lancé un " + numberIa + "\nVous gagnez la manche : vous " + scorePlayer + " - moi " + scoreIA);
-                        break;
-                    case 2:
+                    System.out.println("J'ai lancé un " + numberIa + "\nLe plus petit score gagne, donc vous - "
+                            + scorePlayer + ", moi - " + scoreIA);
+                    break;
+                case 2:
+                    if (numberIa > numberPlayer) {
                         scoreIA++;
-                        System.out.println("J'ai lancé un " + numberIa + "\nJe gagne la manche : vous " + scorePlayer + " - moi " + scoreIA);
-                        break;
-                    default:
-                        System.out.println(("Situation inconnue"));
-                }
-            } else {
-                System.out.println("J'ai lancé un " + numberIa + "\nEgalité : vous " + scorePlayer + " - moi " + scoreIA);
+                    } else
+                        scorePlayer++;
+                    System.out.println("J'ai lancé un " + numberIa + "\nLe plus grand score gagne, donc vous - "
+                            + scorePlayer + ", moi - " + scoreIA);
+                    break;
+                default : System.out.println("Etrange situation !");
             }
 
         } while (scorePlayer < 10 && scoreIA < 10);
 
-        if(scorePlayer == 10){
+        if (scorePlayer == 10) {
             System.out.println("Vous avez gagné ! Félicitations !");
         }
-        if(scoreIA == 10){
+        if (scoreIA == 10) {
             System.out.println("J'ai gagné ! Vous aurez plus de chance la prochaine fois !");
         }
 

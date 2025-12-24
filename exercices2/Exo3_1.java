@@ -8,7 +8,7 @@ public class Exo3_1 {
 
     public static void main(String[] args) {
         Random alea = new Random();
-        int solution = alea.nextInt(100);
+        int solution = alea.nextInt(101);
         Scanner entree = new Scanner(System.in);
         int nbEssais = 0;
         int essai=0;

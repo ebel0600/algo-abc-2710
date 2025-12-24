@@ -50,6 +50,7 @@ public class Exo2_5 {
                             + scorePlayer + ", moi - " + scoreIA);
                     break;
                 default : System.out.println("Etrange situation !");
+                break;
             }
 
         } while (scorePlayer < 10 && scoreIA < 10);

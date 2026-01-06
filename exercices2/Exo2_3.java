@@ -3,6 +3,7 @@ package exercices2;
 import java.util.Scanner;
 
 public class Exo2_3 {
+    @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) {
 
         //declaration de variables

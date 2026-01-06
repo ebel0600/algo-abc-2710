@@ -3,6 +3,7 @@ package exercices3;
 import java.util.Scanner;
 
 public class Exo1_1 {
+    @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) throws Exception {
 
         String nombres;
@@ -18,7 +19,7 @@ public class Exo1_1 {
 
         do {
             System.out.println("Entrez une série de nombre entiers séparés par un espace");
-            mustBeNumber: while (true) {
+            while (true) {
                 try {
                     nombres = entree.nextLine();
                     tab = nombres.split(" ");
@@ -27,7 +28,7 @@ public class Exo1_1 {
                         test = Double.parseDouble(tab[i]);
                         r[i] = test;
                     }
-                    break mustBeNumber;
+                    break;
                 } catch (NumberFormatException e) {
                     System.out.println(e.getLocalizedMessage() + " on demande des nombres entiers");
                 }
@@ -58,7 +59,7 @@ public class Exo1_1 {
             // voulez vous continuer ?
             System.out.println("Souhaitez vous continuer ? (O/N)");
 
-            continUe : while (true) {
+            while (true) {
                 try {
                     saisie = entree.next().charAt(0);
                     if (!(saisie == 'o' || saisie == 'O' || saisie == 'n' || saisie == 'N')) {
@@ -70,7 +71,7 @@ public class Exo1_1 {
                             wannaContinue = false;
                         }
                         entree.nextLine();
-                        break continUe;
+                        break;
                     }
                 } catch (Exception saisieErr) {
                     System.out.println(saisieErr.getMessage()+" saisissez une réponse O ou N");

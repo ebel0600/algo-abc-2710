@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Exo2_5 {
+    @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) {
         // declaration de variables
         Scanner entree = new Scanner(System.in);
@@ -15,7 +16,7 @@ public class Exo2_5 {
 
         // Deroule du jeu
 
-        jeu: do {
+        do {
             System.out.println("Entrez la valeur de la main que vous souhaitez jouer :");
             numberPlayer = entree.nextInt();
             numberIa = alea.nextInt(3);
@@ -26,31 +27,28 @@ public class Exo2_5 {
             }
             if (numberPlayer < 0) {
                 System.out.println("Arrêt du jeu");
-                break jeu;
+                break;
             }
 
             switch (Math.abs(numberIa - numberPlayer)) {
-                case 0:
-                    System.out.println("J'ai lancé un " + numberIa + "\nEgalité ! pas d'évolution de scores");
-                    break;
-                case 1:
+                case 0 -> System.out.println("J'ai lancé un " + numberIa + "\nEgalité ! pas d'évolution de scores");
+                case 1 -> {
                     if (numberIa < numberPlayer) {
                         scoreIA++;
                     } else
                         scorePlayer++;
                     System.out.println("J'ai lancé un " + numberIa + "\nLe plus petit score gagne, donc vous - "
                             + scorePlayer + ", moi - " + scoreIA);
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     if (numberIa > numberPlayer) {
                         scoreIA++;
                     } else
                         scorePlayer++;
                     System.out.println("J'ai lancé un " + numberIa + "\nLe plus grand score gagne, donc vous - "
                             + scorePlayer + ", moi - " + scoreIA);
-                    break;
-                default : System.out.println("Etrange situation !");
-                break;
+                }
+                default -> System.out.println("Etrange situation !");
             }
 
         } while (scorePlayer < 10 && scoreIA < 10);

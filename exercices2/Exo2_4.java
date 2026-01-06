@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Exo2_4 {
 
+    @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) {
 
         int a;

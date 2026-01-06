@@ -3,6 +3,7 @@ package exercices3;
 import java.util.Scanner;
 
 public class Exo1_10 {
+    @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) {
         int nombres;
         int diviseurs = 1;

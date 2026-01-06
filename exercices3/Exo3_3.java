@@ -3,6 +3,7 @@ package exercices3;
 import java.util.Scanner;
 
 public class Exo3_3 {
+    @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) {
         String fable;
         int alphabet[] = new int[24];

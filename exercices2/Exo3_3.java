@@ -41,7 +41,7 @@ public class Exo3_3 {
             System.out.println("404 not found");
         }
         else{
-            System.out.println("N est a la position numero" + (position+1));
+            System.out.println("N est a la position numero " + (position+1));
         }
 
         entree.close();

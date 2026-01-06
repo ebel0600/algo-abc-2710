@@ -3,6 +3,7 @@ package exercices3;
 import java.util.Scanner;
 
 public class Exo2_7 {
+    @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args){
 
         Scanner entree = new Scanner(System.in);

@@ -15,8 +15,6 @@ public class Exo3_4 {
         char[] lettres;
         int occurences = 0;
 
-        // parametrage du tableau
-
         System.out.println("Définissez votre chaine de caracteres :");
         // controle du point en dernier caractère
         do {

@@ -24,7 +24,7 @@ public class Exo3_3 {
         transcription = (fable.toLowerCase()).toCharArray();
 
         for (char value : transcription) {
-            for (int i = 0; i < 24; i++) {
+            for (int i = 0; i < 26; i++) {
                 charToInt = value;
                 if (charToInt - 97 == i) {
                     alphabet[i]++;
@@ -33,7 +33,7 @@ public class Exo3_3 {
         }
 
         System.out.println("Voici le nombre d'occurence de chaque lettre de l'alphabet dans cette fable :");
-        for(int j = 0; j<24;j++){
+        for(int j = 0; j<26;j++){
             lettre = (char)(j+97);
             if(alphabet[j]>0){
             System.out.println(lettre + " - "+alphabet[j]);

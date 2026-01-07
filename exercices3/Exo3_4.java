@@ -3,6 +3,7 @@ package exercices3;
 import java.util.Scanner;
 
 public class Exo3_4 {
+    @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) {
         //declaration de variables
         int[] tableau;

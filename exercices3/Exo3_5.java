@@ -20,6 +20,8 @@ public class Exo3_5 {
         } while (!dernier.equals("."));
         entree.close();
 
+
+        // calcul et affichage du resultat
         tabChar = (phrase.replaceAll("\\s+", "")).toCharArray();
         if (tabChar.length == 1) {
             System.out.println("La chaine est vide.");

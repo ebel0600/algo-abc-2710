@@ -37,13 +37,13 @@ public class App {
     }
 
     private static String tabAmortissement (double mensualite, int nbMois, double capital, double tauxmensuel){
-        String resultat="Compteur mois\tPart interet\tPart capital\tCapital restant du\tMensualité\n";
+        String resultat="Compteur mois\tPart interet\tPart capital\tCapital restant du\tMensualité\tMensualité cumulée\n";
 
         double partInteret = capital * tauxmensuel;
         double partCapital = mensualite - partInteret;
 
         for (int i = 0; i <= nbMois; i++){
-            resultat += i+"\t\t"+arrondi(partInteret,1)+"\t\t"+arrondi(partCapital,1)+"\t\t"+Math.round(capital)+"\t\t\t"+Math.round(mensualite)+"\n";
+            resultat += i+"\t\t"+arrondi(partInteret,1)+"\t\t"+arrondi(partCapital,1)+"\t\t"+Math.round(capital)+"\t\t\t"+Math.round(mensualite)+"\t\t"+Math.round(i*mensualite)+"\n";
             capital-=partCapital;
             partInteret = capital * tauxmensuel;
             partCapital = mensualite-partInteret;

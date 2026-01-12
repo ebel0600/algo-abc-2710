@@ -1,3 +1,4 @@
+package entrainement.PGCD.src;
 
 import java.util.Scanner;
 

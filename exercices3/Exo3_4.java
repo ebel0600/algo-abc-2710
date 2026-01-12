@@ -24,7 +24,7 @@ public class Exo3_4 {
         }
 
         // tri par ordre croissant
-        for (int k = 0; k < tableau.length; k++) {
+        for (int k = 0; k < tableau.length-1; k++) {
             for (int j = k; j < tableau.length; j++) {
                 if (tableau[k] > tableau[j]) {
                     permuteur = tableau[j];

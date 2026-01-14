@@ -5,6 +5,9 @@ import java.util.Scanner;
 public class Exo3_3 {
     @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) {
+
+        // Version personnelle
+
         String fable;
         String phrase;
         int frequence[] = new int[26];
@@ -50,10 +53,10 @@ public class Exo3_3 {
             lettre = (char) (j + 97);
             if (frequence[j] > 0) {
                 System.out.println(lettre + " - " + frequence[j]);
+
             }
+            System.out.println("Programme terminé");
+
         }
-
-        System.out.println("Programme terminé");
-
     }
 }

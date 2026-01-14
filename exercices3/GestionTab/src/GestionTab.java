@@ -21,13 +21,9 @@ public class GestionTab {
 
     public static void triBulleTableau(int[] monTab) {
         boolean permut;
-        int passage = 0;
         do {
-
             permut = false;
-
             for (int i = 0; i < monTab.length - 1; i++) {
-
                 if (monTab[i] > monTab[i + 1]) {
                     int temp = monTab[i + 1];
                     monTab[i + 1] = monTab[i];
@@ -35,10 +31,7 @@ public class GestionTab {
 
                     permut = true;
                 }
-
             }
-            passage++;
-
         } while (permut == true);
     }
 
@@ -62,5 +55,11 @@ public class GestionTab {
         System.out.print("]\n");
 
     }
+        public static boolean plusGrandQue(String string1, String string2) {
+        int char1, char2;
+        char1 = Integer.parseInt(string1);
+        char2 = Integer.parseInt(string2);
 
+        return char1 > char2;
+    }
 }

@@ -1,6 +1,4 @@
 
-
-
 import java.util.*;
 
 public class GestionTab {
@@ -21,24 +19,27 @@ public class GestionTab {
         }
     }
 
-    public static void triBulleTableau(int[] _tableau){
-        boolean permutation = true;
+    public static void triBulleTableau(int[] monTab) {
+        boolean permut;
         int passage = 0;
-        int encours;
+        do {
 
-        while(permutation){
-            permutation = false;
-            passage++;
-            for(encours=0;encours<20-passage;encours++){
-                if(_tableau[encours]>_tableau[encours+1]){
-                    permutation = true;
-                    //echange des elements
-                    int temp = _tableau[encours];
-                    _tableau[encours] = _tableau[encours+1];
-                    _tableau[encours+1] = temp;
+            permut = false;
+
+            for (int i = 0; i < monTab.length - 1; i++) {
+
+                if (monTab[i] > monTab[i + 1]) {
+                    int temp = monTab[i + 1];
+                    monTab[i + 1] = monTab[i];
+                    monTab[i] = temp;
+
+                    permut = true;
                 }
+
             }
-        }
+            passage++;
+
+        } while (permut == true);
     }
 
     public static void remplirTableau(int[] _tableau) {

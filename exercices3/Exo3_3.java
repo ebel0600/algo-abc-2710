@@ -6,7 +6,8 @@ public class Exo3_3 {
     @SuppressWarnings("ConvertToTryWithResources")
     public static void main(String[] args) {
         String fable;
-        int alphabet[] = new int[24];
+        String phrase;
+        int frequence[] = new int[26];
         char[] transcription;
         int charToInt;
         char lettre;
@@ -21,26 +22,38 @@ public class Exo3_3 {
             }
         } while (fable.length() < 120);
         entree.close();
-        transcription = (fable.toLowerCase()).toCharArray();
+
+        phrase = fable.toLowerCase();
+        phrase = phrase.replace('à', 'a');
+        phrase = phrase.replace('é', 'e');
+        phrase = phrase.replace('ê', 'e');
+        phrase = phrase.replace('è', 'e');
+        phrase = phrase.replace('ù', 'u');
+        phrase = phrase.replace('ç', 'a');
+        phrase = phrase.replace('î', 'i');
+        phrase = phrase.replace('â', 'a');
+        phrase = phrase.replace('ë', 'e');
+        phrase = phrase.replace('ô', 'o');
+        transcription = phrase.toCharArray();
 
         for (char value : transcription) {
             for (int i = 0; i < 26; i++) {
                 charToInt = value;
                 if (charToInt - 97 == i) {
-                    alphabet[i]++;
+                    frequence[i]++;
                 }
             }
         }
 
         System.out.println("Voici le nombre d'occurence de chaque lettre de l'alphabet dans cette fable :");
-        for(int j = 0; j<26;j++){
-            lettre = (char)(j+97);
-            if(alphabet[j]>0){
-            System.out.println(lettre + " - "+alphabet[j]);
+        for (int j = 0; j < 26; j++) {
+            lettre = (char) (j + 97);
+            if (frequence[j] > 0) {
+                System.out.println(lettre + " - " + frequence[j]);
             }
         }
 
         System.out.println("Programme terminé");
-        
+
     }
 }

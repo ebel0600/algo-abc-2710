@@ -55,11 +55,30 @@ public class GestionTab {
         System.out.print("]\n");
 
     }
-        public static boolean plusGrandQue(String string1, String string2) {
+
+    public static boolean plusGrandQue(String nombre1, String nombre2) {
         int char1, char2;
-        char1 = Integer.parseInt(string1);
-        char2 = Integer.parseInt(string2);
+        char1 = Integer.parseInt(nombre1);
+        char2 = Integer.parseInt(nombre2);
 
         return char1 > char2;
+    }
+
+    public static void triBulleTableau(String[][] unTab) {
+        boolean permut;
+        do {
+            permut = false;
+            for (int i = 0; i < unTab.length - 1; i++) {
+                if (GestionTab.plusGrandQue(unTab[i][1], unTab[i + 1][1])) {
+                    String tempNumber = unTab[i + 1][1];
+                    String tempString = unTab[i + 1][0];
+                    unTab[i + 1][1] = unTab[i][1];
+                    unTab[i + 1][0] = unTab[i][0];
+                    unTab[i][1] = tempNumber;
+                    unTab[i][0] = tempString;
+                    permut = true;
+                }
+            }
+        } while (permut == true);
     }
 }

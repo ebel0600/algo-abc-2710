@@ -53,10 +53,8 @@ public class Exo3_3 {
             lettre = (char) (j + 97);
             if (frequence[j] > 0) {
                 System.out.println(lettre + " - " + frequence[j]);
-
             }
             System.out.println("Programme terminé");
-
         }
     }
 }

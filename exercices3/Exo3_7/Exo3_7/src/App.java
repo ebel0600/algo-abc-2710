@@ -9,7 +9,7 @@ public class App {
 
         String[] abcDev = new String[] { "Salah", "Anthony", "Jimmy", "Simon", "Thibaud", "Etienne", "Isis", "Laydi",
                 "Benjamin", "Mathieu", "Steven", "Ozias", "Bilel" };
-        int debut=0, fin=abcDev.length-1;        
+        int debut = 0, fin = abcDev.length - 1;
         int i = 1;
 
         // presentation
@@ -22,27 +22,34 @@ public class App {
         System.out.println("Qui souhaitez vous rechercher par dichotomie ?");
         recherche = entree.nextLine().toLowerCase();
 
-        while (debut!=fin){
-        if(strCompare(recherche, median(abcDev, debut, fin)).equals(recherche)){
-            fin /= 2;
-            
+        while (debut != fin) {
+            if (strCompare(recherche, median(abcDev, debut, fin)).equals(recherche)) {
+                fin = (fin + debut) / 2;
+
+            } else if (strCompare(recherche, median(abcDev, debut, fin)).equals(median(abcDev, debut, fin))) {
+                if ((debut + fin)%2==0) {
+                    debut = (debut + fin) / 2;
+                }
+                else debut = ((debut + fin) / 2)+1;
+            }
+            System.out.println(recherche + " se trouve entre " + abcDev[debut] + " en poisition "+ (debut+1) +" et " + abcDev[fin] + " en position "+ (fin+1) );
         }
-        else if(strCompare(recherche, median(abcDev, debut, fin)).equals(median(abcDev, debut, fin))){
-            debut = (debut+fin)/2;
+
+        if (!recherche.equals(median(abcDev, debut, fin).toLowerCase())){
+            System.out.println("Mais il ou elle n'existe pas dans la formation !");
         }
-        System.out.println(recherche+" se trouve entre "+abcDev[debut]+" et "+ abcDev[fin]);
-    }
+
+        System.out.println("Programme terminé");
 
         entree.close();
 
     }
 
- 
-
     public static String median(String[] subAbcDev, int debut, int fin) {
-        if(subAbcDev.length%2 == 0)
-        return subAbcDev[(subAbcDev.length / 2)-1];
-        else return subAbcDev[subAbcDev.length/2];
+        if ((debut + fin) % 2 == 0)
+            return subAbcDev[(debut + fin) / 2];
+        else
+            return subAbcDev[((debut + fin) / 2)+1];
     }
 
     public static String strCompare(String recherche, String median) {
@@ -56,9 +63,7 @@ public class App {
 
         if (char1 < char2) {
             return recherche;
-        } else if (char2 < char1) {
-            return median;
         } else
-            return "Jackpot";
+            return median;
     }
 }

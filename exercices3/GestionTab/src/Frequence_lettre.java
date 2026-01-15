@@ -12,7 +12,7 @@ public class Frequence_lettre {
             System.out.println("Veuillez saisir une Phrase d'au moins 120 caractères !");
             phrase = sc.nextLine();
 
-        } while (phrase.length() < 120);
+        } while (phrase.length() < 10);
 
         phrase = phrase.toLowerCase();
         phrase = phrase.replace('à', 'a');
@@ -70,25 +70,9 @@ public class Frequence_lettre {
             System.out.println("lettre alphabet: " + soustableau[0] + " Fréquence d'apparition :" + soustableau[1]);
         }
 
-        // GestionTab.triBulleTableau(alphaFrequence);
+        GestionTab.triBulleTableau(alphaFrequence);
 
-        boolean permut;
-        do {
-            permut = false;
-            for (int i = 0; i < alphabet.length - 1; i++) {
-                if (GestionTab.plusGrandQue(alphaFrequence[i][1], alphaFrequence[i + 1][1])) {
-                    String tempFreq = alphaFrequence[i + 1][1];
-                    String tempAlpha = alphaFrequence[i + 1][0];
-                    alphaFrequence[i + 1][1] = alphaFrequence[i][1];
-                    alphaFrequence[i + 1][0] = alphaFrequence[i][0];
-                    alphaFrequence[i][1] = tempFreq;
-                    alphaFrequence[i][0] = tempAlpha;
-                    permut = true;
-                }
-            }
-        } while (permut == true);
-
-        System.out.println("\n -------------------- \n Après tri par effectif croissant");
+        System.out.println("\n -------------------- \n\nAprès tri par effectif croissant");
         for (String[] soustableau : alphaFrequence) {
             if (GestionTab.plusGrandQue(soustableau[1], "0"))
                 System.out.println("lettre alphabet: " + soustableau[0] + " Fréquence d'apparition :" + soustableau[1]);

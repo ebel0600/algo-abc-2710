@@ -16,7 +16,7 @@ public class App {
         entree.close();
 
         probaOrdre = factoriel(chevauxPartants).divide(factoriel(chevauxPartants - chevauxJoues));
-        probaDesordre = factoriel(chevauxPartants).divide((factoriel(chevauxJoues).multiply(factoriel(chevauxPartants - chevauxJoues))));
+        probaDesordre = factoriel(chevauxPartants).divide(factoriel(chevauxJoues).multiply(factoriel(chevauxPartants - chevauxJoues)));
 
         System.out.println("Vos chances de gagner dans sont de :\n1 sur " + probaOrdre + " dans l'ordre\net 1 sur "
                 + probaDesordre + " dans le désordre\nProgramme terminé !");

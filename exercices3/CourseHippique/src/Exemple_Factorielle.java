@@ -16,7 +16,7 @@ public class Exemple_Factorielle {
         System.out.println("arrivée dnas l'ordre ou desordre ? true/false");
         ordre = sc.nextBoolean();
         switch (choix) {
-            case 1:
+            case 1 -> {
                 if (ordre) {
                     res = Exemple_Factorielle.nbArrangement(3, nbchevaux);
                     System.out.println("vous avez 1 chance de  gagner le tiercé dans l'ordre sur :" + res);
@@ -25,8 +25,8 @@ public class Exemple_Factorielle {
                     res = Exemple_Factorielle.nbCombinaison(3, nbchevaux);
                     System.out.println("vous avez 1 chance de  gagner le tiercé dans le desordre sur :" + res);
                 }
-                break;
-            case 2:
+            }
+            case 2 -> {
                 if (ordre) {
                     res = Exemple_Factorielle.nbArrangement(4, nbchevaux);
                     System.out.println("vous avez 1 chance de  gagner le quarté dans l'ordre sur :" + res);
@@ -35,8 +35,8 @@ public class Exemple_Factorielle {
                     res = Exemple_Factorielle.nbCombinaison(4, nbchevaux);
                     System.out.println("vous avez 1 chance de  gagner le quarté dans le desordre sur :" + res);
                 }
-                break;
-            case 3:
+            }
+            case 3 -> {
                 if (ordre) {
                     res = Exemple_Factorielle.nbArrangement(5, nbchevaux);
                     System.out.println("vous avez 1 chance de  gagner le quinté dans l'ordre sur :" + res);
@@ -45,10 +45,8 @@ public class Exemple_Factorielle {
                     res = Exemple_Factorielle.nbCombinaison(5, nbchevaux);
                     System.out.println("vous avez 1 chance de  gagner le quinté dans le desordre sur :" + res);
                 }
-                break;
-            default:
-                System.out.println("Erreur veuillez taper un nombre entier entre 1 et 3 ");
-                break;
+            }
+            default -> System.out.println("Erreur veuillez taper un nombre entier entre 1 et 3 ");
         }
 
         sc.close();

@@ -41,12 +41,14 @@ public class App {
 
         double partInteret = capital * tauxmensuel;
         double partCapital = mensualite - partInteret;
+        double mensualite_restante=mensualite;
+        double capital_restant = capital;
 
         for (int i = 0; i <= nbMois; i++){
-            resultat += i+"\t\t"+arrondi(partInteret,1)+"\t\t"+arrondi(partCapital,1)+"\t\t"+Math.round(capital)+"\t\t\t"+Math.round(mensualite)+"\t\t"+Math.round(i*mensualite)+"\n";
-            capital-=partCapital;
-            partInteret = capital * tauxmensuel;
-            partCapital = mensualite-partInteret;
+            resultat += i+"\t\t"+arrondi(partInteret,1)+"\t\t"+arrondi(partCapital,1)+"\t\t"+Math.round(capital_restant)+"\t\t\t"+((i!=nbMois)? Math.round(mensualite_restante):0)+"\t\t"+Math.round(i*mensualite)+"\n";
+            capital_restant-=partCapital;
+            partInteret = capital_restant * tauxmensuel;
+            partCapital = mensualite_restante-partInteret;
         }
 
         return resultat;
